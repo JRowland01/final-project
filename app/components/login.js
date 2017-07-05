@@ -1,29 +1,41 @@
 import React, { Component } from 'react';
 import Api from '../utils/API';
+import { browserHistory } from 'react-router';
 
 class Login extends Component {
 	constructor() {
 		super();
-		//this.state = {}
+		this.state = {
+			message: '',
+		}
 		console.log(Api);
+		this.login = this.login.bind(this);
 	}
 	//Login function for current users.
 	//Values are retrieved for the login form.
 	login(e) {
 		e.preventDefault();
+		this.setState({message: 'Processing'});
 		const email = document.getElementById('loginemail').value;
 		const password = document.getElementById('loginpassword').value;
 		Api.login({email, password}).then((response) => {
-			alert(response.data.message);
+
+		{/*If login is successful, save in local storage and redirect user to the main lessons page*/}
+			if(response.data.status) {
+				localStorage.setItem('bibleApp', response.data.token);
+				browserHistory.push('/lessons');
+			}
+			
+			this.setState({message: response.data.message});
 		}).catch((e) => {
 			console.log(e);
-			alert('There was an error on the backend');
+			this.setState({message: "An unknown error occurred"});
 		});
 	}
 
 	render() {
 		return (
-			<div>
+			<div className = "field">
 				<h2>Login</h2>
 			{/*Login function is invoked when user clicks the submit button*/}
 				<form onSubmit={this.login}>
@@ -35,6 +47,7 @@ class Login extends Component {
 						<label>Password</label>
 						<input type="password" id="loginpassword"/>
 					</div>
+					<p>{this.state.message}</p>
 					<input type="submit" value="Login"/>
 				</form>
 				

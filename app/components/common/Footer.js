@@ -2,11 +2,12 @@ import React from "react";
 
 const Footer = () => (
   <footer className="footer">
-    <hr />
-    <p className="pull-right">
-      <i className="fa fa-github" aria-hidden="true" />
-        &nbsp;&nbsp; @ 2017 Called to Conquer
+  <div className= "container">
+    <p className="footer-text">
+      
+     @ 2017 Destined to Conquer
     </p>
+    </div>
   </footer>
 );
 

@@ -1,4 +1,5 @@
-var userModel = require('../models/User')
+var userModel = require('../models/User');
+var jwt = require('jsonwebtoken');
 const UserController = {
 	register: function(req, res) {
 		var newUser = new userModel();
@@ -16,14 +17,15 @@ const UserController = {
 	},
 
 	login: function(req, res){
+		console.log(req.body);
 		userModel.findOne({email: req.body.email, password: req.body.password}, function(err, user) {
 			if(err) {
-				console.log(err);
+				console.log(err, 'error');
 				res.json({status: false, message: 'An error occurred'});
 			} else {
-				console.log(user);
 				if(user) {
-					res.json({status: true, message: 'Login succesfull'});
+					var token = jwt.sign({user}, 'SECRET', { expiresIn: '1h' });
+					res.json({status: true, message: 'Login successful', token});
 				} else {
 					res.json({status: false, message: 'Invalid email/password'});
 				}
