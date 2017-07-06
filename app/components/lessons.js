@@ -30,15 +30,16 @@ class Lessons extends Component{
 	render() {
 		
 
+	//Allows the lesson thumbnails to be displayed in the Lessons page and with a hover.
 		return (
 		<div className="container">
-			<h1>Lessons</h1>
+			<h1 className="main-lesson-title">Lessons</h1>
 			<div className="row container-a4">
 				<ul className="img-hover-style">
 				{
 					this.state.lessons.map((eachLesson, index) => {
 						return (
-							<li key={index} className="col-md-3 lesson-holder">
+							<li key={index} className="col-md-4 lesson-holder">
 								<Link to={"view-lesson/"+eachLesson._id}>
 									<img src={"assets/images/"+eachLesson.image} alt=""/>
 									<div className="caption">

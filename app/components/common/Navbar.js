@@ -13,12 +13,7 @@ const Navbar = ({isLoggedIn}) => (
         <li>
           <Link to="/">Home</Link>
         </li>
-        <li>
-          <Link to="#brief">About</Link>
-        </li>
-        <li>
-          <Link to="/contact">Contact</Link>
-        </li>
+       
         {
           (isLoggedIn) ? <li > <Link to="/logout">Logout</Link></li> :<li ><Link to="/login">Login</Link></li>
         }

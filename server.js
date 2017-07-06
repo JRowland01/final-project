@@ -4,7 +4,7 @@ var mongoose = require("mongoose");
 var bodyParser = require("body-parser");
 var routes = require('./routes/routes');
 var app = express();
-var PORT = process.env.PORT || 5000;
+var PORT = process.env.PORT || 3000;
 
 var db = process.env.MONGODB_URI || "mongodb://localhost/bibleApp";
 
@@ -27,9 +27,6 @@ app.use(bodyParser.json());
 // Parse application/x-www-form-urlencoded
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(routes);
-
-//var routes = require('./controllers/'); // controller name
-//app.use('/', routes);
 
 app.listen(PORT, function() {
 	console.log('App is ready on port', PORT);

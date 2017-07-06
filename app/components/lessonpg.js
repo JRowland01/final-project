@@ -57,10 +57,12 @@ class Lessonpg extends Component{
 		const { lesson } = this.state;
 		return(
 				<div className="container">
-					<h1>{lesson.title}</h1>
+
+					<h1 className="lesson-title">{lesson.title}</h1>
 					<div className="lesson-content" dangerouslySetInnerHTML={{'__html': lesson.lesson_text}}></div>
 
 					<hr/>
+					<h2 className="questions-heading">Questions</h2>
 					<div className="questions">
 						<form onSubmit={this.answerLesson} id="answerForm">
 							<p>{lesson.question_one}</p>
@@ -71,25 +73,25 @@ class Lessonpg extends Component{
 							
 							<p>{lesson.question_two}</p>
 							<div className="form-group pmd-textfield pmd-textfield-floating-label">
-							    <label htmlFor="answer2">Answer 2</label>
+							    <label htmlFor="answer2">Answer</label>
 							    <textarea rows="10" className="form-control" id="answer2"></textarea>
 							</div>
 							
 							<p>{lesson.question_three}</p>
 							<div className="form-group pmd-textfield pmd-textfield-floating-label">
-							    <label htmlFor="answer3">Your answer</label>
+							    <label htmlFor="answer3">Answer</label>
 							    <textarea rows="10" className="form-control" id="answer3"></textarea>
 							</div>
 							
 							<p>{lesson.question_four}</p>
 							<div className="form-group pmd-textfield pmd-textfield-floating-label">
-							    <label htmlFor="answer4">Answer 4</label>
+							    <label htmlFor="answer4">Answer</label>
 							    <textarea rows="10" className="form-control" id="answer4"></textarea>
 							</div>
 							<button type="submit" className="btn btn-primary">Submit</button>
 						</form>
 					</div>
-
+					<a href="/lessons"><h4>Back to Lessons page</h4></a>
 					<RefTagger />
 				</div>
 			)

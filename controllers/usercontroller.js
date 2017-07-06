@@ -1,5 +1,7 @@
+//Dependencies
 var userModel = require('../models/User');
 var jwt = require('jsonwebtoken');
+
 const UserController = {
 	//The register function allows the new user to be created in the system.
 	register: function(req, res) {
@@ -17,7 +19,7 @@ const UserController = {
 			res.json({status: false, message: 'User not created'});
 		}
 	},
-
+	//The login function allows the user to be logged in. If their login information is valid, a JSON token is retrieved that expires in 1hr
 	login: function(req, res){
 		console.log(req.body);
 		userModel.findOne({email: req.body.email, password: req.body.password}, function(err, user) {

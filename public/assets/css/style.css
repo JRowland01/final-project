@@ -1,11 +1,20 @@
+html {
+  overflow-y: scroll;
+}
 
 body {
-  background: #FFFFFF !important;
+  background: #faf4fb;
  
 }
 
 nav {
 	background: #FFFFFF;
+}
+
+.navbar-brand{
+	font-family: 'Cinzel', serif !important;
+	color:#4B0082 !important;
+
 }
 
 .footer-text{
@@ -14,9 +23,28 @@ nav {
 	margin-top:10px;
 }
 
+h1, h3{
+	color:#9400D3;
+}
+
+.questions-heading{
+	color:#9400D3;
+}
+
+
+.main-lesson-title{
+	text-align: center;
+	padding-bottom:10px;
+	color:#9400D3;
+}
+
+.navbar-default .navbar-nav>li>a{
+	color:#9400D3;
+}
+
 .hero-img {
   width:100%;
-  
+
 }
 
 .brief-intro {
@@ -27,6 +55,9 @@ nav {
 
 .contact {
 	margin: 20px 0;
+	padding:5px;
+	background-color:#d26bff;
+	color:#FFFFFF;
 }
 
 .lesson-holder img {
@@ -107,7 +138,7 @@ nav {
 		width: 400px;
 		height: 300px;
 		top:100px;
-		text-align:left;
+		text-align:center !important;
 	}
 
 .questions {

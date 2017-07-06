@@ -12,7 +12,7 @@ const LessonController = {
 			}
 		});
 	},
-	//Retrieves information about a particular lesson.
+	//Retrieves and displays lesson content when the user selects a lesson.
 	getALesson: function(req, res) {
 		lessonsModel.findOne({_id: req.params.lessonId}, function(err, lesson) {
 			if(err) {
