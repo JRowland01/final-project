@@ -45,7 +45,7 @@ class Lessons extends Component{
 									<div className="caption">
 										<div className="blur"></div>
 										<div className="caption-text">
-											<h1>{eachLesson.title}</h1>
+											<h1 className="lesson-heading">{eachLesson.title}</h1>
 										</div>
 									</div>
 								</Link>
