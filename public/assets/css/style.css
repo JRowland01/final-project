@@ -133,7 +133,7 @@ h1, h3{
 	}
 	.img-hover-style .caption-text{
 		z-index: 10;
-		color: #fff;
+		color: #fff !important;
 		position: absolute;
 		width: 400px;
 		height: 300px;
