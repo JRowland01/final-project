@@ -3,8 +3,8 @@ import Api from '../utils/API';
 import { browserHistory } from 'react-router';
 
 class Login extends Component {
-	constructor() {
-		super();
+	constructor(props) {
+		super(props);
 		this.state = {
 			message: '',
 		}
@@ -20,13 +20,12 @@ class Login extends Component {
 		const password = document.getElementById('loginpassword').value;
 		Api.login({email, password}).then((response) => {
 
-		{/*If login is successful, save in local storage and redirect user to the main lessons page*/}
+		//If login is successful, save in local storage and redirect user to the main lessons page
 			if(response.data.status) {
 				localStorage.setItem('bibleApp', response.data.token);
+				this.props.setLoginStatus(true);
 				browserHistory.push('/lessons');
 			}
-			
-			this.setState({message: response.data.message});
 		}).catch((e) => {
 			console.log(e);
 			this.setState({message: "An unknown error occurred"});

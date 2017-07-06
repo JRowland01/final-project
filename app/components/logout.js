@@ -5,6 +5,7 @@ class Logout extends Component{
 	/*When the user logs out, they will be directed to the home page.*/
 	componentWillMount() {
 		localStorage.removeItem('bibleApp');
+		this.props.setLoginStatus(false);
 		browserHistory.push('/');
 	}
 

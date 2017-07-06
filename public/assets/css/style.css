@@ -1,15 +1,11 @@
-/*html {
-  position: relative;
-  min-height: 100%;
-}*/
 
 body {
-  background: white !important;
+  background: #FFFFFF !important;
  
 }
 
 nav {
-	background: white;
+	background: #FFFFFF;
 }
 
 .footer-text{
@@ -37,25 +33,25 @@ nav {
 	width: 100%;
 }
 
-.caption-style-4{
+.img-hover-style{
 		list-style-type: none;
 		margin: 0px;
 		padding: 0px;
 		
 	}
 
-	.caption-style-4 li{
+	.img-hover-style li{
 		float: left;
 		padding: 0px;
 		position: relative;
 		overflow: hidden;
 	}
 
-	.caption-style-4 li:hover .caption{
+	.img-hover-style li:hover .caption{
 		opacity: 1;
 	}
 
-	.caption-style-4 li:hover img{
+	.img-hover-style li:hover img{
 		opacity: 1;
 		transform: scale(1.15,1.15);
 		-webkit-transform:scale(1.15,1.15);
@@ -65,7 +61,7 @@ nav {
 	}
 
 
-	.caption-style-4 img{
+	.img-hover-style img{
 		margin: 0px;
 		padding: 0px;
 		float: left;
@@ -73,7 +69,7 @@ nav {
 	}
 
 
-	.caption-style-4 .caption{
+	.img-hover-style .caption{
 		cursor: pointer;
 		position: absolute;
 		opacity: 0;
@@ -84,35 +80,46 @@ nav {
 		transition:all 0.45s ease-in-out;
 	}
 
-	.caption-style-4 img{
+	.img-hover-style img{
 		-webkit-transition:all 0.25s ease-in-out;
 		-moz-transition:all 0.25s ease-in-out;
 		-o-transition:all 0.25s ease-in-out;
 		-ms-transition:all 0.25s ease-in-out;
 		transition:all 0.25s ease-in-out;
 	}
-	.caption-style-4 .blur{
-		background-color: rgba(0,0,0,0.65);
+	.img-hover-style .blur{
+		background-color: rgba(142, 68, 173,0.95);
 		height: 300px;
 		width: 400px;
 		z-index: 5;
 		position: absolute;
 	}
 
-	.caption-style-4 .caption-text h1{
+	.img-hover-style .caption-text h1{
 		text-transform: uppercase;
-		font-size: 24px;
+		font-size: 1em;
+		margin-left: 10px;
 	}
-	.caption-style-4 .caption-text{
+	.img-hover-style .caption-text{
 		z-index: 10;
 		color: #fff;
 		position: absolute;
 		width: 400px;
 		height: 300px;
-		text-align: center;
 		top:100px;
+		text-align:left;
 	}
 
 .questions {
 	margin: 30px 0;
+}
+
+.logo-img{
+	
+	height:100px;
+	float:left;
+}
+
+.navbar-right p{
+	
 }

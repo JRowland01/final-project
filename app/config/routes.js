@@ -1,6 +1,7 @@
 import React from "react";
 import { Route, IndexRoute, Router, browserHistory } from "react-router";
 
+//Imported components
 import Main from "../components/main";
 import Home from "../components/home";
 import Register from "../components/register";

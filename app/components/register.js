@@ -15,7 +15,9 @@ class Register extends Component {
 		const lastname = document.getElementById('lastname').value;
 		const email = document.getElementById('email').value;
 		const password = document.getElementById('password').value;
-		Api.register({firstname, lastname, email, password});
+		Api.register({firstname, lastname, email, password}).then((response) => {
+			alert(response.data.message);
+		});
 	}
 
 	render() {

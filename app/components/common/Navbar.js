@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router";
 
 
-const Navbar = () => (
+const Navbar = ({isLoggedIn}) => (
 
   <nav style={{ marginBottom: 0 }} className="navbar navbar-default pmd-navbar">
     <div className="container">
@@ -19,12 +19,12 @@ const Navbar = () => (
         <li>
           <Link to="/contact">Contact</Link>
         </li>
-        <li >
-          <Link to="/login">Login</Link>
-        </li>
-        <li >
-          <Link to="/register">Register</Link>
-        </li>
+        {
+          (isLoggedIn) ? <li > <Link to="/logout">Logout</Link></li> :<li ><Link to="/login">Login</Link></li>
+        }
+        {
+          (!isLoggedIn) ? <li><Link to="/register">Register</Link></li>: ''
+        }
       </ul>
     </div>
   </nav>

@@ -1,18 +1,20 @@
 var userModel = require('../models/User');
 var jwt = require('jsonwebtoken');
 const UserController = {
+	//The register function allows the new user to be created in the system.
 	register: function(req, res) {
 		var newUser = new userModel();
 		newUser.firstname = req.body.firstname;
 		newUser.lastname = req.body.lastname;
 		newUser.email = req.body.email;
 		newUser.password = req.body.password;
+		
 		if(newUser.save()) {
 			console.log('user created');
-			res.send('user successfully created')
+			res.json({status: true, message: 'User successfully created'});
 		} else {
 			console.log('user not created');
-			res.send('user not created');
+			res.json({status: false, message: 'User not created'});
 		}
 	},
 
