@@ -60,6 +60,12 @@ h1, h3{
 	color:#FFFFFF;
 }
 
+.lesson-holder {
+	width:33.33333333%;
+	box-sizing:border-box;
+	float:left;
+}
+
 .lesson-holder img {
 	width: 100%;
 }

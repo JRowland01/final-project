@@ -39,7 +39,7 @@ class Lessons extends Component{
 				{
 					this.state.lessons.map((eachLesson, index) => {
 						return (
-							<li key={index} className="col-md-4 lesson-holder">
+							<li key={index} className="lesson-holder">
 								<Link to={"view-lesson/"+eachLesson._id}>
 									<img src={"assets/images/"+eachLesson.image} alt=""/>
 									<div className="caption">
