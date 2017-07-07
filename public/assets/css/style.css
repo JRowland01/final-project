@@ -61,9 +61,7 @@ h1, h3{
 }
 
 .lesson-holder {
-	width:33.33333333%;
-	box-sizing:border-box;
-	float:left;
+	max-height:260px;
 }
 
 .lesson-holder img {
