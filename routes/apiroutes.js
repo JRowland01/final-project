@@ -15,4 +15,6 @@ router.get('/lessons', LessonController.getAll)
 
 router.post('/answer', LessonController.answerLesson);
 
+router.post('/hassubmitted', LessonController.hasAnsweredLesson);
+
 module.exports = router;

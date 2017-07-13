@@ -10,21 +10,16 @@ const UserController = {
 		newUser.lastname = req.body.lastname;
 		newUser.email = req.body.email;
 		newUser.password = req.body.password;
-		
-		if(newUser.save()) {
-			console.log('user created');
+		newUser.save().then(()=>{
 			res.json({status: true, message: 'User successfully created'});
-		} else {
-			console.log('user not created');
+		}).catch(()=>{
 			res.json({status: false, message: 'User not created'});
-		}
+		})
 	},
 	//The login function allows the user to be logged in. If their login information is valid, a JSON token is retrieved that expires in 1hr
 	login: function(req, res){
-		console.log(req.body);
 		userModel.findOne({email: req.body.email, password: req.body.password}, function(err, user) {
 			if(err) {
-				console.log(err, 'error');
 				res.json({status: false, message: 'An error occurred'});
 			} else {
 				if(user) {

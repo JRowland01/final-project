@@ -19,7 +19,12 @@ const API = {
 
   submitAnswers: function(formData) {
     return axios.post('/api/answer', formData, {headers: {'Authorization': localStorage.getItem('bibleApp')}});
+  },
+
+  hasSubmittedAnswers: function(formData){
+    return axios.post('/api/hassubmitted', formData, {headers: {'Authorization': localStorage.getItem('bibleApp')}});
   }
+
 };
 
 export default API;

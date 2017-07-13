@@ -1,11 +1,14 @@
 import React, { Component } from 'react';
 import Api from '../utils/API';
 import RefTagger  from 'react-reftagger';
+import { browserHistory } from 'react-router';
 
 class Lessonpg extends Component{
 	constructor(props) {
 		super(props);
 		this.state = {
+			problem:false,
+			answered:false,
 			lesson: {
 				title: '',
 				lesson_text: '',
@@ -17,25 +20,42 @@ class Lessonpg extends Component{
 		}
 		this.answerLesson = this.answerLesson.bind(this);
 	}
-	//Once the loads, the lesson details are retrieved.
+	//Once the page loads, the lesson details are retrieved.
 	componentWillMount() {
+		//Get lesson details
 		Api.getLessonDetails(this.props.params.lessonId).then((response) => {
 			if(response.data.status) {
-				this.setState({lesson: response.data.lesson});
+				this.setState({
+					lesson: response.data.lesson,
+					answered:false,
+					problem:false
+				});
 			}
+		//Set state of lesson details
+		}).then(()=>{
+			return Api.hasSubmittedAnswers({lessonId:this.props.params.lessonId})
+		//Determines if user has submitted the lesson answers.
+		}).then((response)=>{
+			if(response.data.status) {
+				this.setState({
+					answered: response.data.status,
+					lesson: this.state.lesson,
+					problem:false
+				});
+			}
+		//log error to console in the event of failure.
 		}).catch((e) => {
 			console.log(e);
-			//alert('An error occurred');
 		});
 	}
 
 	//Retrieves the answers from the DOM, and makes API call to submit answers.
 	answerLesson(e) {
 		e.preventDefault();
-		const answer1 = document.querySelector('#answer1').value;
-		const answer2 = document.querySelector('#answer2').value;
-		const answer3 = document.querySelector('#answer3').value;
-		const answer4 = document.querySelector('#answer4').value;
+		const answer1 = this.answer1.value;
+		const answer2 = this.answer2.value;
+		const answer3 = this.answer3.value;
+		const answer4 = this.answer4.value;
 		Api.submitAnswers({
 			answer1,
 			answer2,
@@ -43,18 +63,19 @@ class Lessonpg extends Component{
 			answer4,
 			lessonId: this.props.params.lessonId
 		}).then((response) => {
-			document.querySelector('#answerForm').reset();
-			alert(response.data.message);
-		}).catch(e => {
-			console.log(e)
-			alert('An error occurred ');
+			if (response.data.status){
+				browserHistory.push("/lessons");
+			}else{
+				this.setState({problem:true});
+			}
+			
 		});
 	}
 
 	render() {
 		// es6 destructuring
 		//lesson property of this.state assigned to lesson variable
-		const { lesson } = this.state;
+		const { lesson, answered } = this.state;
 		return(
 				<div className="container">
 
@@ -62,42 +83,59 @@ class Lessonpg extends Component{
 					<div className="lesson-content" dangerouslySetInnerHTML={{'__html': lesson.lesson_text}}></div>
 
 					<hr/>
-					<h2 className="questions-heading">Questions</h2>
-					<div className="questions">
-						<form onSubmit={this.answerLesson} id="answerForm">
-							<p>{lesson.question_one}</p>
-							<div className="form-group pmd-textfield pmd-textfield-floating-label">
-							    <label htmlFor="answer1">Answer</label>
-							    <textarea rows="10" className="form-control" id="answer1"></textarea>
-							</div>
-							
-							<p>{lesson.question_two}</p>
-							<div className="form-group pmd-textfield pmd-textfield-floating-label">
-							    <label htmlFor="answer2">Answer</label>
-							    <textarea rows="10" className="form-control" id="answer2"></textarea>
-							</div>
-							
-							<p>{lesson.question_three}</p>
-							<div className="form-group pmd-textfield pmd-textfield-floating-label">
-							    <label htmlFor="answer3">Answer</label>
-							    <textarea rows="10" className="form-control" id="answer3"></textarea>
-							</div>
-							
-							<p>{lesson.question_four}</p>
-							<div className="form-group pmd-textfield pmd-textfield-floating-label">
-							    <label htmlFor="answer4">Answer</label>
-							    <textarea rows="10" className="form-control" id="answer4"></textarea>
-							</div>
-							<button type="submit" className="btn btn-primary">Submit</button>
-						</form>
-					</div>
+					{/*If the questions have been answered, a message will be displayed. 
+					If they have not, the questions will be displayed*/}
+					{answered ? this.renderMessage() : this.renderQuestions(lesson)}
 					<a href="/lessons"><h4>Back to Lessons page</h4></a>
 					<RefTagger />
 				</div>
 			)
 
 	}
+	
+	renderMessage(){
+		return(
+				<div className="container">
+				<p><b>You have already completed this lesson.</b></p><br/>
+				</div>	
 
+			)
+	}
+
+	renderQuestions(lesson){
+		return(
+					<div className="questions">
+						<h2 className="questions-heading">Questions</h2>
+						<form onSubmit={this.answerLesson} id="answerForm">
+							<p>{lesson.question_one}</p>
+							<div className="form-group pmd-textfield pmd-textfield-floating-label">
+							    <label htmlFor="answer1">Answer</label>
+							    <textarea rows="10" className="form-control"  ref={(input)=> this.answer1 = input}></textarea>
+							</div>
+							
+							<p>{lesson.question_two}</p>
+							<div className="form-group pmd-textfield pmd-textfield-floating-label">
+							    <label htmlFor="answer2">Answer</label>
+							    <textarea rows="10" className="form-control" ref={(input)=> this.answer2 = input}></textarea>
+							</div>
+							
+							<p>{lesson.question_three}</p>
+							<div className="form-group pmd-textfield pmd-textfield-floating-label">
+							    <label htmlFor="answer3">Answer</label>
+							    <textarea rows="10" className="form-control" ref={(input)=> this.answer3 = input}></textarea>
+							</div>
+							
+							<p>{lesson.question_four}</p>
+							<div className="form-group pmd-textfield pmd-textfield-floating-label">
+							    <label htmlFor="answer4">Answer</label>
+							    <textarea rows="10" className="form-control" ref={(input)=> this.answer4 = input}></textarea>
+							</div>
+							<button type="submit" className="btn btn-primary">Submit</button>
+						</form>
+					</div>
+
+		)
+	}
 }
 
 export default Lessonpg;

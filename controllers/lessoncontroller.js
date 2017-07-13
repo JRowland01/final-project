@@ -22,6 +22,27 @@ const LessonController = {
 			}
 		})
 	},
+
+	hasAnsweredLesson: function(req, res){
+				var userId;
+		jwt.verify(req.headers.authorization, 'SECRET', function(err, decoded) {
+			
+		//If the user's token has expired, an unauthorized status will appear
+			if(err) {
+				res.json({status: false, message: 'Unauthorized'});
+			} else {
+				userId = decoded.user._id;
+				answerModel.findOne({user_id: userId, lesson_id: req.body.lessonId}, function(err, answer) {
+					if(answer) {
+						res.json({status: true, message: 'You have already completed this lesson'});
+					} else {
+						res.json({status: false, message: 'Answers have not submitted'});
+					}
+				})
+			}
+		})
+	},
+
 	//The user submits the answer for a lesson.
 	answerLesson: function(req, res) {
 		var userId;
@@ -43,11 +64,14 @@ const LessonController = {
 						answer.answer_four = req.body.answer4;
 						answer.lesson_id = req.body.lessonId;
 						answer.user_id = userId;
-						if(answer.save()) {
-							res.json({status: true, message: 'Answer has been submitted'});
-						} else {
-							res.json({status: false, message: 'Answer not submitted'});
-						}
+						//Promise used to determine if the answer has been submitted.
+						answer.save().then(()=>{
+							res.json({status: true, message: 'Answers have been submitted'});
+						}).catch(()=>{
+							res.json({status: false, message: 'Answers have not submitted'});
+						})
+
+
 					}
 				})
 			}

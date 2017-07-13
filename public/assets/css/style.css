@@ -8,7 +8,8 @@ body {
 }
 
 nav {
-	background: #FFFFFF;
+	background: #faf4fb !important;
+	border:none !important;
 }
 
 .navbar-brand{
@@ -23,8 +24,13 @@ nav {
 	margin-top:10px;
 }
 
-h1, h3{
+h1, h2, h3{
 	color:#9400D3;
+	font-family: 'Cinzel', serif;
+}
+
+.h3-heading{
+	font-family: 'Cinzel', serif;
 }
 
 .questions-heading{
@@ -36,6 +42,17 @@ h1, h3{
 	text-align: center;
 	padding-bottom:10px;
 	color:#9400D3;
+}
+
+.lesson-title{
+	text-align:center;
+}
+
+.contact-heading{
+	color:#FFFFFF;
+}
+.contact-text{
+	color:#FFFFFF;
 }
 
 .navbar-default .navbar-nav>li>a{
@@ -56,7 +73,9 @@ h1, h3{
 .contact {
 	margin: 20px 0;
 	padding:5px;
-	background-color:#d26bff;
+	background-image: url("/assets/images/bible-bkg.png");
+	background-repeat:none;
+	/*background-color:#d26bff;*/
 	color:#FFFFFF;
 }
 
@@ -66,6 +85,10 @@ h1, h3{
 
 .lesson-holder img {
 	width: 100%;
+}
+
+.btn-primary{
+	background-color:#9400D3 !important;
 }
 
 .img-hover-style{
@@ -151,14 +174,4 @@ h1, h3{
 
 .questions {
 	margin: 30px 0;
-}
-
-.logo-img{
-	
-	height:100px;
-	float:left;
-}
-
-.navbar-right p{
-	
 }
