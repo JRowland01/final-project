@@ -37,15 +37,17 @@ class Lessons extends Component{
 			<div className="row container-a4">
 				<ul className="img-hover-style">
 				{
-					this.state.lessons.map((eachLesson, index) => {
+				/*Map takes the lessons array elements and maps it to a new array containing React elements.*/
+					this.state.lessons.map((lesson) => {
 						return (
-							<li key={index} className="col-md-4 lesson-holder">
-								<Link to={"/view-lesson/"+eachLesson._id}>
-									<img src={"assets/images/"+eachLesson.image} alt=""/>
+					/*Retrieves the images corresponding to the lesson id in the database*/
+							<li key={lesson._id} className="col-md-4 lesson-holder">
+								<Link to={"/view-lesson/"+lesson._id}>
+									<img src={"assets/images/"+lesson.image} alt=""/>
 									<div className="caption">
 										<div className="blur"></div>
 										<div className="caption-text">
-											<h1 className="lesson-heading">{eachLesson.title}</h1>
+											<h1 className="lesson-heading">{lesson.title}</h1>
 										</div>
 									</div>
 								</Link>

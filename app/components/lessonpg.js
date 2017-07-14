@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import Api from '../utils/API';
 import RefTagger  from 'react-reftagger';
-import { browserHistory } from 'react-router';
+import { Link, browserHistory } from 'react-router';
 
 class Lessonpg extends Component{
 	constructor(props) {
@@ -86,7 +86,7 @@ class Lessonpg extends Component{
 					{/*If the questions have been answered, a message will be displayed. 
 					If they have not, the questions will be displayed*/}
 					{answered ? this.renderMessage() : this.renderQuestions(lesson)}
-					<a href="/lessons"><h4>Back to Lessons page</h4></a>
+					<Link to ="/lessons"><h4>Back to Lessons page</h4></Link>
 					<RefTagger />
 				</div>
 			)
