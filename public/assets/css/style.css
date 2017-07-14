@@ -14,6 +14,7 @@ nav {
 
 .navbar-brand{
 	font-family: 'Cinzel', serif !important;
+	font-weight: 700;
 	color:#4B0082 !important;
 
 }
@@ -26,11 +27,13 @@ nav {
 
 h1, h2, h3{
 	color:#9400D3;
-	font-family: 'Cinzel', serif;
+	font-family: 'Cinzel', serif; 
+	font-weight: 700;
 }
 
 .h3-heading{
 	font-family: 'Cinzel', serif;
+	font-weight: 700;
 }
 
 .questions-heading{
@@ -53,10 +56,14 @@ h1, h2, h3{
 }
 .contact-text{
 	color:#FFFFFF;
+	font-family:Roboto !important;
+	font-weight:400;
 }
 
 .navbar-default .navbar-nav>li>a{
 	color:#9400D3;
+	font-family: 'Cinzel', serif !important;
+	font-weight: 700;
 }
 
 .hero-img {
