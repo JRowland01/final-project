@@ -11,12 +11,12 @@
     "jsonwebtoken": "^7.4.1",
     "mongoose": "^4.5.10",
     "morgan": "^1.7.0",
+    "nodemon": "^1.11.0",
     "react": "^0.14.3",
     "react-dom": "^0.14.3",
     "react-reftagger": "0.0.6",
     "react-router": "^3.0.0",
-    "request": "^2.72.0",
-    "nodemon": "^1.11.0"
+    "request": "^2.72.0"
   },
   "devDependencies": {
     "babel-core": "^6.3.13",
