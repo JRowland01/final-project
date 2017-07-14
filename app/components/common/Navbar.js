@@ -15,17 +15,49 @@ const Navbar = ({isLoggedIn}) => (
         </li>
        
         {
-          (isLoggedIn) ? <li > <Link to="/logout">Logout</Link></li>:<li ><Link to="/login">Login</Link></li>
+          (isLoggedIn) ? <Lessons/> : <Login/>
         }
+
         {
-          (!isLoggedIn) ? <li><Link to="/register">Register</Link></li>: ''
+          (isLoggedIn) ? <Logout/> : <Register/>
         }
+       
       </ul>
     </div>
   </nav>
 
 );
 
+function Login(){
+  return(
+  <li > 
+     <Link to="/login">Login</Link>
+  </li>
+  )
+}
 
+function Register(){
+  return(
+  <li>
+      <Link to="/register">Register</Link>
+  </li>
+  )
+}
+
+function Logout(){
+  return(
+  <li > 
+      <Link to="/logout">Logout</Link>
+  </li>
+  )
+}
+
+function Lessons(){
+  return(
+  <li > 
+      <Link to="/lessons">Lessons</Link>
+  </li>
+  )
+}
 
 export default Navbar;

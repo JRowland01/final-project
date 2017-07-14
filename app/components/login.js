@@ -26,12 +26,16 @@ class Login extends Component {
 				this.props.setLoginStatus(true);
 				browserHistory.push('/lessons');
 			} else {
-				this.setState({message: response.data.message});
+				this.setState({message: response.data.message, problem:true});
 			}
 		}).catch((e) => {
 			console.log(e);
-			this.setState({message: "An unknown error occurred"});
+			this.setState({message: "An unknown error occurred", problem:true});
 		});
+	}
+
+	errorMsg(){
+		return <div className="alert alert-danger">{this.state.message}</div>
 	}
 
 	render() {
@@ -42,6 +46,7 @@ class Login extends Component {
 					<div className="row">
 						<div className="col-xs-4 col-xs-offset-4">
 							<h2>Login</h2>
+							{this.state.problem ? this.errorMsg(): null}
 							<div className="form-group pmd-textfield">
 								<label htmlFor="loginemail">Email</label>
 								<input type="email" id="loginemail" className="form-control"/>

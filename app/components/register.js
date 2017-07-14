@@ -26,7 +26,7 @@ class Register extends Component {
 	}
 
 	render() {
-		let errorMsg = <div>A registration error occured.</div>
+		let errorMsg = <div className="alert alert-danger">A registration error occured.</div>
 		return (
 			<div className="row">
 				<div className="col-xs-4 col-xs-offset-4">
