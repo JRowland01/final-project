@@ -38,7 +38,7 @@ class Home extends Component{
 				</div>
 
 				<div className="col-md-6">
-				<br/>
+				<h3 className="contact-heading">Contact Us</h3>
 					<form>
 					  <div className="form-group pmd-textfield">
 					    <label htmlFor="name">Name</label>
