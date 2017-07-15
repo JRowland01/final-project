@@ -92,7 +92,8 @@ color:#A48BB0 !important;
 .contact {
 	margin: 20px 0;
 	padding:5px;
-	background-image: url("/assets/images/bible-bkg.jpg");
+	background-color: #b971dd;
+	/*background-image: url("/assets/images/bible-bkg.jpg");*/
 	background-repeat:none;
 	color:#FFFFFF;
 }
