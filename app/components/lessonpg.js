@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import Api from '../utils/API';
-import RefTagger  from 'react-reftagger'; //An NPM used to display the Bible verses.
-//It gets the verses from Biblia API
 
+//An NPM used to display the Bible verses.
+import RefTagger  from 'react-reftagger';
 import { Link, browserHistory } from 'react-router';
 
 class Lessonpg extends Component{
@@ -20,6 +20,7 @@ class Lessonpg extends Component{
 				question_four: ''
 			}
 		}
+
 		this.answerLesson = this.answerLesson.bind(this);
 	}
 	//Once the page loads, the lesson details are retrieved.
@@ -92,7 +93,7 @@ class Lessonpg extends Component{
 					{answered ? this.renderMessage() : this.renderQuestions(lesson)}
 					<Link to ="/lessons"><h4>Back to Lessons page</h4></Link>
 
-					<RefTagger /> //React RefTagger tag
+					<RefTagger /> 
 
 				</div>
 			)
