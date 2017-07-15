@@ -8,7 +8,7 @@ class Login extends Component {
 		this.state = {
 			message: '',
 		}
-		
+
 		this.login = this.login.bind(this);
 	}
 	//Login function for current users.
@@ -39,7 +39,7 @@ class Login extends Component {
 
 	render() {
 		return (
-			<div className = "field">
+			<div className = "form">
 			{/*Login function is invoked when user clicks the submit button*/}
 				<form onSubmit={this.login}>
 					<div className="row">
@@ -59,7 +59,7 @@ class Login extends Component {
 						</div>
 					</div>
 				</form>
-				
+			
 			</div>
 		);
 	}
