@@ -5,7 +5,7 @@ const Footer = () => (
   <div className= "container">
     <p className="footer-text">
       
-     {/*@ 2017 Destined to Conquer*/}
+     @ 2017 Destined to Conquer
     </p>
     </div>
   </footer>

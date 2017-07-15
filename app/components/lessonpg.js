@@ -74,7 +74,7 @@ class Lessonpg extends Component{
 
 	render() {
 		// es6 destructuring
-		//lesson property of this.state assigned to lesson variable
+		//lesson property of this.state assigned to lesson and answered variables
 		const { lesson, answered } = this.state;
 		return(
 				<div className="container">

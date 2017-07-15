@@ -1,6 +1,60 @@
 import React, { Component } from 'react';
 
 class Home extends Component{
+	constructor(props) {
+		super(props);
+		this.state = {
+			message: '',
+			name: '',
+			email:'',
+			alertMsg:''
+		}
+
+		this.submitForm = this.submitForm.bind(this);
+		this.handleInputChange = this.handleInputChange.bind(this);
+	}
+
+	handleInputChange(event) {
+		const target = event.target;
+		const value = target.value;
+		const name = target.name;
+
+		this.setState({
+		[name]: value
+		});
+	}
+
+	submitForm(e){
+		this.setState({
+		alertMsg:''
+		})
+
+		e.preventDefault()
+		var _this = this;
+		$.ajax({
+	   		url: "https://formspree.io/info@jimmiarowland.com", 
+	   		method: "POST",
+	   		data: {
+	   			message: _this.state.message,
+	   			_replyto: _this.state.email,
+	   			name: _this.state.name
+	   		},
+	   		dataType: "json",
+	   		success: function(){
+	   			_this.setState({
+	   				message: '',
+	   				email: '',
+	   				name:'',
+	   				alertMsg:'Your message has been sent.'
+	   			});
+	   		}
+		});
+	}
+
+	alertMsg(){
+		return <div className="alert alert-success">{this.state.alertMsg}</div>
+	}
+
 	render() {
 		return (
 	<div className="container-fluid">
@@ -39,18 +93,19 @@ class Home extends Component{
 
 				<div className="col-md-6">
 				<h3 className="contact-heading">Contact Us</h3>
-					<form>
+					{this.state.alertMsg ? this.alertMsg(): null}
+					<form onSubmit={this.submitForm}>
 					  <div className="form-group pmd-textfield">
 					    <label htmlFor="name">Name</label>
-					    <input type="text" className="form-control" id="name"  />
+					    <input type="text" className="form-control" id="name" name="name" value={this.state.name} onChange={this.handleInputChange}/>
 					  </div>
 					  <div className="form-group pmd-textfield">
 					    <label htmlFor="email">Email</label>
-					    <input type="text" className="form-control" id="email" />
+					    <input type="text" className="form-control" id="email" name="email" value={this.state.email} onChange={this.handleInputChange}/>
 					  </div>
 					  <div className="form-group pmd-textfield">
 					    <label htmlFor="message">Message</label>
-					    <textarea rows="10" className="form-control" id="message" />
+					    <textarea rows="10" className="form-control" id="message" name="message" value={this.state.message} onChange={this.handleInputChange}/>
 					  </div>
 					  <button type="submit" className="btn btn-default">Submit</button>
 					</form>

@@ -6,7 +6,6 @@ class Register extends Component {
 	constructor() {
 		super();
 		this.state = {problem:false};
-		console.log(Api);
 	}
 	//Register function for new users.
 	//Values are retrieved for the contact form.

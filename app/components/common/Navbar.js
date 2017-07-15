@@ -13,11 +13,11 @@ const Navbar = ({isLoggedIn}) => (
         <li>
           <Link to="/">Home</Link>
         </li>
-       
+       {/*If the user is logged in, display the Lessons page link*/}
         {
           (isLoggedIn) ? <Lessons/> : <Login/>
         }
-
+      {/*If the user is logged in, display the Logout page link*/}
         {
           (isLoggedIn) ? <Logout/> : <Register/>
         }

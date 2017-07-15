@@ -26,12 +26,14 @@ const UserController = {
 
 	//The login function allows the user to be logged in. If their login information is valid, a JSON token is retrieved that expires in 1hr
 	login: function(req, res){
+		console.log(req.body.email);
 		//Finding an entry in database containing the correct email address.
 		userModel.findOne({email: req.body.email}).then(function(user){
+			console.log(user);
 			//bcrypt is used to compare the password given to the password hash saved
 			let passwordHash = user.password;
 			let loginPassword = req.body.password;
-			//returning promise, allowing us to have a promise chain containing catch.
+			//Returning promise, allowing us to have a promise chain containing catch.
 			return bcrypt.compare(loginPassword, passwordHash).then(function(passwordCorrect){
 
 			//A boolean value is passed, determining if the password and the hash matches.
