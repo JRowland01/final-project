@@ -72,6 +72,12 @@ h1, h2, h3{
 	font-weight: 700;
 }
 
+.navbar-nav > li > a:hover, .navbar-nav > li > a:focus{
+
+color:#A48BB0 !important;
+}
+
+
 .hero-img {
   width:100%;
 
@@ -191,7 +197,7 @@ h1, h2, h3{
 
 .login-form{
 	background-color:#DB9BFF;
-	
+
 }
 
 #ourmanna-verse {
