@@ -11,9 +11,6 @@ class Home extends Component{
 			</div>
 		</div>
 		<img className="hero-img" src="assets/images/hero-image-praise.jpg" />
-
-	
-
 	</div>
 		);
 	}

@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import Api from '../utils/API';
-import RefTagger  from 'react-reftagger';
+import RefTagger  from 'react-reftagger'; //An NPM used to display the Bible verses.
+//It gets the verses from Biblia API
+
 import { Link, browserHistory } from 'react-router';
 
 class Lessonpg extends Component{
@@ -35,7 +37,7 @@ class Lessonpg extends Component{
 		//Set state of lesson details
 		}).then(()=>{
 			return Api.hasSubmittedAnswers({lessonId:this.props.params.lessonId})
-			
+
 		//Determines if user has submitted the lesson answers.
 		}).then((response)=>{
 			if(response.data.status) {
@@ -89,7 +91,9 @@ class Lessonpg extends Component{
 					If they have not, the questions will be displayed*/}
 					{answered ? this.renderMessage() : this.renderQuestions(lesson)}
 					<Link to ="/lessons"><h4>Back to Lessons page</h4></Link>
-					<RefTagger />
+
+					<RefTagger /> //React RefTagger tag
+
 				</div>
 			)
 
