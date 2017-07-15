@@ -29,7 +29,6 @@ class Lessons extends Component{
 
 	render() {
 		
-
 	//Allows the lesson thumbnails to be displayed in the Lessons page and with a hover.
 		return (
 		<div className="container">

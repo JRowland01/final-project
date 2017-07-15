@@ -31,9 +31,11 @@ class Lessonpg extends Component{
 					problem:false
 				});
 			}
+
 		//Set state of lesson details
 		}).then(()=>{
 			return Api.hasSubmittedAnswers({lessonId:this.props.params.lessonId})
+			
 		//Determines if user has submitted the lesson answers.
 		}).then((response)=>{
 			if(response.data.status) {
