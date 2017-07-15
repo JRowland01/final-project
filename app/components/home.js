@@ -87,9 +87,11 @@ class Home extends Component{
 		<div id="contact" className="contact">
 			<div className="row">
 				<div className="col-md-6">
-				<h3 className="contact-heading">Contact Us</h3>
-					<h2 className="contact-text">Do you have any questions or would like to provide feedback? Feel free to complete our contact form. We look forward to hearing from you and will<br/> respond within 24 hours.</h2>
-				</div>
+				<h3 className="contact-heading">Bible Verse of the Day</h3>
+
+				<div id="ourmanna-verse">Loading...</div>
+						{/* <h2 className="contact-text">Do you have any questions or would like to provide feedback? Feel free to complete our contact form. We look forward to hearing from you and will<br/> respond within 24 hours.</h2>*/}
+					</div>
 
 				<div className="col-md-6">
 				<h3 className="contact-heading">Contact Us</h3>
