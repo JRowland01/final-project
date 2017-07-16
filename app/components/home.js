@@ -6,7 +6,6 @@ class Home extends Component{
 	render() {
 		return (
 	<div className="container-fluid">
-		
 		<img className="hero-img" src="assets/images/hero-image-praise.jpg" />
 
 		<div id="brief" className="brief-intro">
@@ -29,10 +28,10 @@ class Home extends Component{
 				</div>
 			</div>
 		</div>
-		<div id="contact" className="contact">
+		<div id="contact" className="verse">
 			<div className="row">
 				<div className="col-md-6">
-				<h3 className="contact-heading">Bible Verse of the Day</h3>
+				<h3 className="verse-heading">Bible Verse of the Day</h3>
 				<div id="ourmanna-verse">Loading...</div>
 						{/* <h2 className="contact-text">Do you have any questions or would like to provide feedback? Feel free to complete our contact form. We look forward to hearing from you and will<br/> respond within 24 hours.</h2>*/}
 					</div>
