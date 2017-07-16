@@ -52,9 +52,19 @@ h1, h2, h3{
 	text-align:center;
 }
 
+.contact-heading{
+	color:#FFFFFF;
+}
+.contact-text{
+	color:#FFFFFF;
+	font-family:Roboto !important;
+	font-weight:400;
+}
 
 .pmd-textfield label {
+   
    color: #3B2647;
+   font-family:Roboto !important;
 }
 
 .navbar-default .navbar-nav>li>a{
@@ -68,17 +78,23 @@ h1, h2, h3{
 color:#A48BB0 !important;
 }
 
-
 .hero-img {
   width:100%;
 
 }
 
-
 .brief-intro {
 	margin: 20px 0;
 	font-size: 16px;
 	line-height: 24px;
+}
+
+.contact {
+	margin: 20px 0;
+	padding:5px;
+	background-image: url("/assets/images/bible-bkg.jpg");
+	background-repeat:none;
+	color:#FFFFFF;
 }
 
 .lesson-holder {
@@ -179,16 +195,10 @@ color:#A48BB0 !important;
 }
 
 
-.login-form{
-	background-color:#DB9BFF;
-
-}
-
 #ourmanna-verse {
     padding: 10px;
     margin:5px;
-    background: #a463c4;
-    color:#FFFFFF;
+    background: rgba(0, 0, 0, 0.1);
     border-color: rgba(0, 0, 0, 0);
     -webkit-border-radius: 5px;
     -moz-border-radius: 5px;

@@ -1,7 +1,10 @@
+//Dependencies
 var lessonsModel = require('../models/Lessons');
 var answerModel = require('../models/Answers');
 var jwt = require('jsonwebtoken');
+
 const LessonController = {
+
 	getAll: function(req, res) {
 		//Allows all of the content retrieved from MongoDB to appear in the Lessons webpage.
 		lessonsModel.find({}, function(err, lessons) {
@@ -12,6 +15,7 @@ const LessonController = {
 			}
 		});
 	},
+
 	//Retrieves and displays lesson content when the user selects a lesson.
 	getALesson: function(req, res) {
 		lessonsModel.findOne({_id: req.params.lessonId}, function(err, lesson) {

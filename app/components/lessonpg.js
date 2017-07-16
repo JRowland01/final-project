@@ -79,7 +79,7 @@ class Lessonpg extends Component{
 
 	render() {
 		// es6 destructuring
-		//lesson property of this.state assigned to lesson and answered variables
+		//lesson property of this.state assigned to lesson and answered constants
 		const { lesson, answered } = this.state;
 		return(
 				<div className="container">
@@ -91,6 +91,7 @@ class Lessonpg extends Component{
 					{/*If the questions have been answered, a message will be displayed. 
 					If they have not, the questions will be displayed*/}
 					{answered ? this.renderMessage() : this.renderQuestions(lesson)}
+
 					<Link to ="/lessons"><h4>Back to Lessons page</h4></Link>
 
 					<RefTagger /> 
