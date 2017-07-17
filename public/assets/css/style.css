@@ -81,14 +81,15 @@ color:#A48BB0 !important;
 }
 
 .verse {
-	margin: 20px 0;
-	padding:5px;
+	margin: 10px 0 10px 0;
+	padding:10px 0 20px 0;
 	background-image: url("/assets/images/bible-bkg.jpg");
 	background-repeat:none;
 	color:#FFFFFF;
 }
 
 .verse-heading{
+	margin:10px 0 10px 5px;
 	color:#FFFFFF;
 }
 
