@@ -225,14 +225,16 @@ h1, h2, h3{
 }
 
 .login-style{
-	background-color:#dbbbe8;
+	border-style: solid;
+	border-color:#c492de;
 	padding:10px 20px 30px 20px;
 	margin-bottom:20px;
 
 }
 
 .register-style{
-	background-color:#dbbbe8;
+	border-style: solid;
+	border-color:#c492de;
 	padding:10px 20px 30px 20px;
 	margin-bottom:20px;
 
