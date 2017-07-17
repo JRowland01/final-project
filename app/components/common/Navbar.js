@@ -5,7 +5,7 @@ import { Link } from "react-router";
 const Navbar = ({isLoggedIn}) => (
 
   <nav style={{ marginBottom: 0 }} className="navbar navbar-default pmd-navbar">
-    <div className="container">
+    <div className="container-fluid">
       <div className="navbar-header">
         <Link className="navbar-brand" to="/">Destined to Conquer</Link>
       </div>

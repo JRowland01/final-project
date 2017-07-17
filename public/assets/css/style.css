@@ -19,6 +19,21 @@ nav {
 
 }
 
+.navbar-default .navbar-nav>li>a{
+	color:#9400D3;
+	font-family: 'Cinzel', serif !important;
+	font-weight: 700;
+}
+
+.navbar-nav > li > a:hover, .navbar-nav > li > a:focus{
+
+color:#A48BB0 !important;
+}
+
+.navbar-right{
+	margin-right:10px;
+}
+
 .footer-text{
 	text-align:center !important;
 	font-size: .8em;
@@ -56,17 +71,6 @@ h1, h2, h3{
    
    color: #3B2647;
    font-family:Roboto !important;
-}
-
-.navbar-default .navbar-nav>li>a{
-	color:#9400D3;
-	font-family: 'Cinzel', serif !important;
-	font-weight: 700;
-}
-
-.navbar-nav > li > a:hover, .navbar-nav > li > a:focus{
-
-color:#A48BB0 !important;
 }
 
 .hero-img {
