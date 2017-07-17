@@ -207,4 +207,11 @@ color:#A48BB0 !important;
 	font-size:1.2em;
 }
 
+.dailyVerses a{
+ text-align: right;
+}
+
+.dailyVerses a::before {
+    content: "- ";
+}
 
