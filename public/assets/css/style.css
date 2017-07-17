@@ -196,6 +196,7 @@ color:#A48BB0 !important;
 .dailyVersesWrapper {
     padding: 10px;
     margin:5px;
+    padding-bottom:40px;
     background: rgba(0, 0, 0, 0.1);
     border-color: rgba(0, 0, 0, 0);
     -webkit-border-radius: 5px;
@@ -204,11 +205,15 @@ color:#A48BB0 !important;
 }
 
 .dailyVerses {
-	font-size:1.2em;
+	font-size:1.3em;
 }
 
-.dailyVerses a{
- text-align: right;
+.dailyVerses a {
+	color:#FFFFFF;
+	float:right;
+	pointer-events: none;
+    cursor: default;
+    font-size: .9em;
 }
 
 .dailyVerses a::before {
