@@ -53,7 +53,6 @@ h1, h2, h3{
 }
 
 .pmd-textfield label {
-   
    color: #3B2647;
    font-family:Roboto !important;
 }
@@ -65,8 +64,7 @@ h1, h2, h3{
 }
 
 .navbar-nav > li > a:hover, .navbar-nav > li > a:focus{
-
-color:#A48BB0 !important;
+	color:#A48BB0 !important;
 }
 
 .hero-img {

@@ -38,7 +38,6 @@ class Home extends Component{
 
 				</div>
 				<div className="col-md-6">
-				
 					
 				</div>
 			</div>
