@@ -80,19 +80,6 @@ color:#A48BB0 !important;
 	line-height: 24px;
 }
 
-.verse {
-	margin: 10px 0 10px 0;
-	padding:10px 0 20px 0;
-	background-image: url("/assets/images/bible-bkg.jpg");
-	background-repeat:none;
-	color:#FFFFFF;
-}
-
-.verse-heading{
-	margin:10px 0 10px 5px;
-	color:#FFFFFF;
-}
-
 .lesson-holder {
 	height:260px;
 }
@@ -110,38 +97,38 @@ color:#A48BB0 !important;
 		margin: 0px;
 		padding: 0px;
 		
-	}
+}
 
-	.img-hover-style li{
+.img-hover-style li{
 		float: left;
 		padding: 0px;
 		position: relative;
 		overflow: hidden;
-	}
+}
 
-	.img-hover-style li:hover .caption{
+.img-hover-style li:hover .caption{
 		opacity: 1;
-	}
+}
 
-	.img-hover-style li:hover img{
+.img-hover-style li:hover img{
 		opacity: 1;
 		transform: scale(1.15,1.15);
 		-webkit-transform:scale(1.15,1.15);
 		-moz-transform:scale(1.15,1.15);
 		-ms-transform:scale(1.15,1.15);
 		-o-transform:scale(1.15,1.15);
-	}
+}
 
 
-	.img-hover-style img{
+.img-hover-style img{
 		margin: 0px;
 		padding: 0px;
 		float: left;
 		z-index: 4;
-	}
+}
 
 
-	.img-hover-style .caption{
+.img-hover-style .caption{
 		cursor: pointer;
 		position: absolute;
 		opacity: 0;
@@ -150,29 +137,31 @@ color:#A48BB0 !important;
 		-o-transition:all 0.45s ease-in-out;
 		-ms-transition:all 0.45s ease-in-out;
 		transition:all 0.45s ease-in-out;
-	}
+}
 
-	.img-hover-style img{
+.img-hover-style img{
 		-webkit-transition:all 0.25s ease-in-out;
 		-moz-transition:all 0.25s ease-in-out;
 		-o-transition:all 0.25s ease-in-out;
 		-ms-transition:all 0.25s ease-in-out;
 		transition:all 0.25s ease-in-out;
-	}
-	.img-hover-style .blur{
+}
+	
+.img-hover-style .blur{
 		background-color: rgba(142, 68, 173,0.95);
 		height: 300px;
 		width: 400px;
 		z-index: 5;
 		position: absolute;
-	}
+}
 
-	.img-hover-style .caption-text h1{
+.img-hover-style .caption-text h1{
 		text-transform: uppercase;
 		font-size: 1em;
 		margin-left: 10px;
-	}
-	.img-hover-style .caption-text{
+}
+
+.img-hover-style .caption-text{
 		z-index: 10;
 		color: #fff !important;
 		position: absolute;
@@ -180,38 +169,51 @@ color:#A48BB0 !important;
 		height: 300px;
 		top:100px;
 		text-align:center !important;
-	}
+}
 
-	.lesson-heading{
-		color: #fff;
-	}
+.lesson-heading{
+	color: #fff;
+}
 
 .questions {
 	margin: 30px 0;
 }
 
+.verse {
+	margin: 10px 0 10px 0;
+	padding:10px 0 20px 0;
+	background-image: url("/assets/images/bible-bkg.jpg");
+	background-repeat:none;
+	color:#FFFFFF;
+}
 
-#ourmanna-verse {
+.verse-heading{
+	margin:10px 0 10px 5px;
+	color:#FFFFFF;
+}
+.verseWrapper {
     padding: 10px;
     margin:5px;
     background: rgba(0, 0, 0, 0.1);
     border-color: rgba(0, 0, 0, 0);
     -webkit-border-radius: 5px;
-    -moz-border-radius: 5px;
-    border-radius: 5px;
+    -moz-border-radius: 5px ;
+    border-radius: 5px ;
 }
-#mannaverse {
-    font-size: 20px;
-    font-weight: normal;
-    margin-bottom: 10px;
-}
-#mannaverse-reference:before {
-    content: "- ";
-}
-#mannaverse-reference {
-    text-align: right;
-    font-size: 14px;
-}
-#mannaverse-version {
-    color: #ddd;
-}
+
+.verseText {
+ 	color:#FFFFFF;
+ 	font-family:Roboto !important;
+ 	font-size:1.5em;
+ 	font-weight:400;
+  }
+ 
+ .verseChapter {
+ 	color:#FFFFFF;
+ 	font-family:Roboto !important;
+ 	font-size:1em;
+ 	font-weight:400;
+ 	text-align:right;
+ }
+
+

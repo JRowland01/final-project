@@ -31,10 +31,12 @@ class Home extends Component{
 		<div id="contact" className="verse">
 			<div className="row">
 				<div className="col-md-6">
-				<h3 className="verse-heading">Bible Verse of the Day</h3>
-				<div id="ourmanna-verse">Loading...</div>
-						{/* <h2 className="contact-text">Do you have any questions or would like to provide feedback? Feel free to complete our contact form. We look forward to hearing from you and will<br/> respond within 24 hours.</h2>*/}
-					</div>
+				<h3 className="verse-heading">Our Bible Verse of Inspiration</h3>
+				<div className="verseWrapper">
+				<p className="verseText"> “Let my teaching fall like rain and my words descend like dew, like showers on new grass, like abundant rain on tender plants.” <p className="verseChapter">- Deuteronomy 32:2</p>  </p>
+				</div>
+
+				</div>
 				<div className="col-md-6">
 				
 					
