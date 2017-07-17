@@ -217,10 +217,23 @@ h1, h2, h3{
 	float:right;
 	pointer-events: none;
     cursor: default;
-    font-size: .9em;
+    font-size:.9em;
 }
 
 .dailyVerses a::before {
     content: "- ";
 }
 
+.login-style{
+	background-color:#dbbbe8;
+	padding:10px 20px 30px 20px;
+	margin-bottom:20px;
+
+}
+
+.register-style{
+	background-color:#dbbbe8;
+	padding:10px 20px 30px 20px;
+	margin-bottom:20px;
+
+}

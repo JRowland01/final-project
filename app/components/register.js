@@ -29,6 +29,7 @@ class Register extends Component {
 		return (
 			<div className="row">
 				<div className="col-xs-4 col-xs-offset-4">
+				 <div className="register-style">
 					<h2>Register</h2>
 				{/*Register function is invoked when user clicks the submit button*/}
 					<form onSubmit={(e)=>this.register(e)}>
@@ -51,7 +52,7 @@ class Register extends Component {
 						</div>
 						<input type="submit" value="Register" className="btn btn-primary"/>
 					</form>
-					
+				</div>
 				</div>
 			</div>
 		);

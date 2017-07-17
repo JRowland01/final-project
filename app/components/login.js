@@ -44,6 +44,7 @@ class Login extends Component {
 				<form onSubmit={this.login}>
 					<div className="row">
 						<div className="col-xs-4 col-xs-offset-4">
+						<div className="login-style">
 							<h2>Login</h2>
 							{this.state.problem ? this.errorMsg(): null}
 							<div className="form-group pmd-textfield">
@@ -56,6 +57,7 @@ class Login extends Component {
 							</div>
 							{/*<p>{this.state.message}</p>*/}
 							<input className="btn btn-primary" type="submit" value="Login"/>
+						</div>
 						</div>
 					</div>
 				</form>
