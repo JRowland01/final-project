@@ -20,6 +20,20 @@
      <!-- jQuery before Propeller.js -->
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 
+    <!--Verse of the day from Dailyverses.net-->
+    <script>
+    $(document).ready(function(){
+    $.ajax({
+    url:'https://dailyverses.net/getdailyverse.ashx?language=niv&isdirect=1&url=' + window.location.hostname,
+    dataType: 'JSONP',
+    success:function(json){
+    $(".dailyVersesWrapper").prepend(json.html);
+
+    }
+
+    });
+    });
+    </script>
 
     <!-- Propeller css -->
     <link href="/assets/css/propeller.min.css" rel="stylesheet">

@@ -53,6 +53,7 @@ h1, h2, h3{
 }
 
 .pmd-textfield label {
+   
    color: #3B2647;
    font-family:Roboto !important;
 }
@@ -64,7 +65,8 @@ h1, h2, h3{
 }
 
 .navbar-nav > li > a:hover, .navbar-nav > li > a:focus{
-	color:#A48BB0 !important;
+
+color:#A48BB0 !important;
 }
 
 .hero-img {
@@ -76,6 +78,19 @@ h1, h2, h3{
 	margin: 20px 0;
 	font-size: 16px;
 	line-height: 24px;
+}
+
+.verse {
+	margin: 10px 0 10px 0;
+	padding:10px 0 20px 0;
+	background-image: url("/assets/images/bible-bkg.jpg");
+	background-repeat:none;
+	color:#FFFFFF;
+}
+
+.verse-heading{
+	margin:10px 0 10px 5px;
+	color:#FFFFFF;
 }
 
 .lesson-holder {
@@ -177,19 +192,8 @@ h1, h2, h3{
 	margin: 30px 0;
 }
 
-.verse {
-	margin: 10px 0 10px 0;
-	padding:10px 0 20px 0;
-	background-image: url("/assets/images/bible-bkg.jpg");
-	background-repeat:none;
-	color:#FFFFFF;
-}
 
-.verse-heading{
-	margin:10px 0 10px 5px;
-	color:#FFFFFF;
-}
-.verseWrapper {
+.dailyVersesWrapper {
     padding: 10px;
     margin:5px;
     background: rgba(0, 0, 0, 0.1);
@@ -199,19 +203,6 @@ h1, h2, h3{
     border-radius: 5px ;
 }
 
-.verseText {
- 	color:#FFFFFF;
- 	font-family:Roboto !important;
- 	font-size:1.5em;
- 	font-weight:400;
-  }
- 
- .verseChapter {
- 	color:#FFFFFF;
- 	font-family:Roboto !important;
- 	font-size:1em;
- 	font-weight:400;
- 	text-align:right;
- }
+
 
 

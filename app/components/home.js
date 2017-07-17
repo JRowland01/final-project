@@ -31,13 +31,15 @@ class Home extends Component{
 		<div id="contact" className="verse">
 			<div className="row">
 				<div className="col-md-6">
-				<h3 className="verse-heading">Our Bible Verse of Inspiration</h3>
-				<div className="verseWrapper">
-				<p className="verseText"> “Let my teaching fall like rain and my words descend like dew, like showers on new grass, like abundant rain on tender plants.” <p className="verseChapter">- Deuteronomy 32:2</p>  </p>
+				<h3 className="verse-heading">Bible Verse of the Day</h3>
+				{/*<div id="ourmanna-verse">Loading...</div>*/}
+				<div className="dailyVersesWrapper">
+				
 				</div>
 
 				</div>
 				<div className="col-md-6">
+				
 					
 				</div>
 			</div>
