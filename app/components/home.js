@@ -6,7 +6,7 @@ class Home extends Component{
 	render() {
 		return (
 	<div className="container-fluid">
-		<img className="hero-img" src="assets/images/hero-image-praise.jpg" />
+		<img className="hero-img" src="assets/images/hero-image.jpg" />
 
 		<div id="brief" className="brief-intro">
 			<div className="row">
