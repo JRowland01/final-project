@@ -19,13 +19,13 @@ class Register extends Component {
 			if (response.data.status){  
 			  browserHistory.push("/login");
 			}else{
-				this.setState({problem:true});
+				this.setState({problem:true, message:response.data.message});
 			}
 		});
 	}
 
 	render() {
-		let errorMsg = <div className="alert alert-danger">A registration error occured.</div>
+		let errorMsg = <div className="alert alert-danger">{this.state.message}</div>
 		return (
 			<div className="row">
 				<div className="col-xs-4 col-xs-offset-4">

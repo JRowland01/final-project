@@ -6,6 +6,15 @@ var bcrypt = require('bcrypt');
 const UserController = {
 	//The register function allows the new user to be created in the system.
 	register: function(req, res) {
+		if (!req.body.firstname 
+			|| !req.body.lastname 
+			|| !req.body.email 
+			|| !req.body.password){
+
+			res.json({status: false, message: 'User not created.'});
+				return;
+		}
+
 		var newUser = new userModel();
 		newUser.firstname = req.body.firstname;
 		newUser.lastname = req.body.lastname;

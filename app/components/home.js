@@ -2,6 +2,17 @@ import React, { Component } from 'react';
 
 class Home extends Component{
 	
+	componentDidMount(){
+
+//Verse of the day from Dailyverses.net
+	$.ajax({
+	    url:'https://dailyverses.net/getdailyverse.ashx?language=niv&isdirect=1&url=' + window.location.hostname,
+	    dataType: 'JSONP',
+	    success:function(json){
+	    $(".dailyVersesWrapper").prepend(json.html);     
+	    }
+    });
+	}
 
 	render() {
 		return (
@@ -32,7 +43,6 @@ class Home extends Component{
 			<div className="row">
 				<div className="col-md-6">
 				<h3 className="verse-heading">Bible Verse of the Day</h3>
-				{/*<div id="ourmanna-verse">Loading...</div>*/}
 				<div className="dailyVersesWrapper">
 				
 				</div>
