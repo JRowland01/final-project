@@ -39,11 +39,11 @@ class Login extends Component {
 
 	render() {
 		return (
-			<div className = "form">
+			<div className = "row">
 			{/*Login function is invoked when user clicks the submit button*/}
 				<form onSubmit={this.login}>
 					<div className="row">
-						<div className="col-xs-4 col-xs-offset-4">
+						<div className="col-md-4 col-md-offset-4">
 						<div className="login-style">
 							<h2>Login</h2>
 							{this.state.problem ? this.errorMsg(): null}

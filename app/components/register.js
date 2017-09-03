@@ -28,7 +28,7 @@ class Register extends Component {
 		let errorMsg = <div className="alert alert-danger">{this.state.message}</div>
 		return (
 			<div className="row">
-				<div className="col-xs-4 col-xs-offset-4">
+				<div className="col-md-4 col-md-offset-4">
 				 <div className="register-style">
 					<h2>Register</h2>
 				{/*Register function is invoked when user clicks the submit button*/}
