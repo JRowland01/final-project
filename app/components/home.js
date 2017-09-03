@@ -41,13 +41,10 @@ class Home extends Component{
 				<div className="col-md-6">
 				<h3 className="verse-heading">Bible Verse of the Day</h3>
 				<div className="dailyVersesWrapper">
-				
 				</div>
 
 				</div>
 				<div className="col-md-6">
-				
-					
 				</div>
 			</div>
 		</div>
