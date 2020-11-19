@@ -6,7 +6,7 @@ var routes = require('./routes/routes');
 var app = express();
 var PORT = process.env.PORT || 3000;
 
-var db = process.env.MONGODB_URI || "mongodb://localhost/bibleApp";
+var db = process.env.MONGODB_URI || "mongodb+srv://JRowland01:Praise463!@bibleapp.vyyel.mongodb.net/bibleapp?retryWrites=true&w=majority";
 
 // Connect mongoose to the database
 mongoose.connect(db, function(error) {
