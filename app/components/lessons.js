@@ -42,7 +42,7 @@ class Lessons extends Component{
 					/*Retrieves the images corresponding to the lesson id in the database*/
 							<li key={lesson._id} className="col-md-4 lesson-holder">
 								<Link to={"/view-lesson/"+lesson._id}>
-									<img src={"assets/images/"+lesson.image} alt=""/>
+									<img src={"/assets/images/"+lesson.image} alt=""/>
 									<div className="caption">
 										<div className="blur"></div>
 										<div className="caption-text">
