@@ -18,7 +18,6 @@ class Lessons extends Component{
 			browserHistory.push('/login')
 		} else {
 			Api.getAllLessons().then((response) => {
-				console.log(response);
 				if(response.status) {
 					this.setState({lessons: response.data.lessons})
 				}

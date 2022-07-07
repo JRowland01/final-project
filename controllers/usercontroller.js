@@ -28,8 +28,7 @@ const UserController = {
 			return newUser.save().then(()=>{ //New user is saved in the database.
 				res.json({status: true, message: 'User successfully created'});
 			})
-		}).catch((e)=>{
-			console.log (e);
+		}).catch(()=>{
 			res.json({status: false, message: 'User not created'});
 		});
 	},
