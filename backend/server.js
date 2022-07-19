@@ -51,7 +51,9 @@ app.use(express.json());
 // app.use(express.urlencoded({ extended: false }));
 app.use(routes);
 
-
+app.get('/', (req, res)=>{
+  res.send('hello world')
+})
 app.listen(PORT, function() {
 	console.log('App is ready on port', PORT);
 });

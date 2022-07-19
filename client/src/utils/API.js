@@ -1,5 +1,6 @@
 import axios from "axios";
-const url = "http://localhost:3000"
+// const url = "http://localhost:3000"
+const url = "https://bible-app-backend.herokuapp.com"
 const API = {
   register: function(formData) {
     console.log('okay', url);
