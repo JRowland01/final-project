@@ -2,8 +2,14 @@ import React from "react";
 import { NavLink } from "react-router-dom";
 
 
-const Navbar = () => (
+const UserNavbar = () => {
 
+  const logout = () => {
+    localStorage.clear()
+    window.location = '/'
+  }
+
+  return(
   <nav style={{ marginBottom: 0 }} className="navbar navbar-default pmd-navbar">
     <div className="container-fluid">
       <div className="navbar-header">
@@ -13,17 +19,17 @@ const Navbar = () => (
         <li>
           <NavLink to="/">Home</NavLink>
         </li>
+        <li > 
+          <NavLink to="/lessons">Lessons</NavLink>
+      </li> 
        <li > 
-          <NavLink to="/login">Login</NavLink>
-       </li>
-         <li>
-          <NavLink to="/register">Register</NavLink>
-      </li>
-       
+          <NavLink to="#"
+                   onClick={logout}>Logout</NavLink>
+      </li> 
       </ul>
     </div>
   </nav>
 
-);
+  )};
 
-export default Navbar;
+export default UserNavbar;

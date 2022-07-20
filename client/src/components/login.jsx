@@ -26,14 +26,15 @@ class Login extends Component {
 				localStorage.setItem('bibleApp', response.data.token);
 			   console.log(response.data.token, response.data.status)
 				// this.props.setLoginStatus(true);
-				this.props.history.push('/lessons');
+				// this.props.history.push('/lessons');
+				window.location.href = './lessons'
 			} else {
 				this.setState({message: response.data.message, problem:true});
 			}
-		})
-		// }).catch((e) => {
-		// 	this.setState({message: "An unknown error occurred", problem:true});
-		// });
+		// })
+		}).catch((e) => {
+			this.setState({message: "An unknown error occurred", problem:true});
+		});
 	}
 
 	errorMsg(){

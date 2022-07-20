@@ -10,22 +10,24 @@ class Lessons extends Component{
 		};
 	}
 
-	componentDidMount() {
+	componentWillMount() {
 		/*If user is not logged into account and attempts to view the lessons page, they will be 
 		directed to the login page*/
 		
-		if(!localStorage.getItem('bibleApp')) {
-			this.props.history.push('/login')
-		} else {
+		// if(!localStorage.getItem('bibleApp')) {
+		// 	this.props.history.push('/login')
+		// } else {
 			Api.getAllLessons().then((response) => {
 				if(response.status) {
 					this.setState({lessons: response.data.lessons})
 				}
-			}).catch(() => {
-				alert('An error occurred');
+			}).catch((err) => {
+				// alert('An error occurred');
+				
+				if(err){console.log('an error occured')}
 			});
 		}
-	}
+	// }
 
 	render() {
 		

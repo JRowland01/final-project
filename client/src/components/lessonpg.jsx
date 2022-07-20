@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import Api from '../utils/API';
 // import {useParams} from 'react-router-dom'
 //An NPM used to display the Bible verses.
-// import RefTagger  from 'react-reftagger';
+import {RefTagger}  from 'react-reftagger';
 import { Link } from 'react-router-dom';
 // import {createBrowserHistory} from "history"
 
@@ -81,8 +81,7 @@ import { Link } from 'react-router-dom';
 		});
 	}
 
-	render() {
-		// es6 destructuring
+	render() {		// es6 destructuring
 		//lesson property of this.state assigned to lesson and answered constants
 		const { lesson, answered } = this.state;
 		return(
@@ -98,7 +97,7 @@ import { Link } from 'react-router-dom';
 
 					<Link to ="/lessons"><h4>Back to Lessons page</h4></Link>
 
-					{/* <RefTagger />  */}
+					<RefTagger bibleVersion={'NLT'}/> 
 
 				</div>
 			)
